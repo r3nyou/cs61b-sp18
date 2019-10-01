@@ -91,4 +91,19 @@ public class Planet {
 
         return netForceY;
     }
+
+    public void update(double dt, double fx, double fy) {
+        double accelerationX = fx / mass;
+        double accelerationY = fy / mass;
+
+        xxVel += dt * accelerationX;
+        yyVel += dt * accelerationY;
+
+        xxPos += dt * xxVel;
+        yyPos += dt * yyVel;
+    }
+
+    public void draw() {
+        StdDraw.picture(xxPos, yyPos, "images/"+imgFileName);
+    }
 }
