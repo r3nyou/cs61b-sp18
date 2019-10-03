@@ -99,24 +99,11 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        IntList result = new IntList();
-        IntList p = result;
-
-        IntList pa = A;
-        while (pa != null) {
-            p.rest = new IntList(pa.first, null);
-            p = p.rest;
-            pa = pa.rest;
+        if (A == null) {
+            return B;
         }
 
-        IntList pb = B;
-        while (pb != null) {
-            p.rest = new IntList(pb.first, null);
-            p = p.rest;
-            pb = pb.rest;
-        }
-
-        return result.rest;
+        return new IntList(A.first, catenate(A.rest, B));
     }
 
 
