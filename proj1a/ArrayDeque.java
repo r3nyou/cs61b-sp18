@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
     }
 
     public void printDeque() {
-        for (int i = plusOne(nextFirst); i != nextLast; i=plusOne(i)) {
+        for (int i = plusOne(nextFirst); i != nextLast; i = plusOne(i)) {
             System.out.print(item[i] + " ");
         }
         System.out.println();
@@ -89,7 +89,7 @@ public class ArrayDeque<T> {
 
         nextFirst = plusOne(nextFirst);
 
-        if (! isEmpty()) {
+        if (!isEmpty()) {
             size--;
         }
 
@@ -103,7 +103,7 @@ public class ArrayDeque<T> {
 
         nextLast = minusOne(nextLast);
 
-        if (! isEmpty()) {
+        if (!isEmpty()) {
             size--;
         }
 
